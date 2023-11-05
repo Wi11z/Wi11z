@@ -1,0 +1,18 @@
+from time import sleep
+
+temp = 0
+total = 1000
+
+mark = '█'
+    
+for n in range(1000):
+    temp += 1
+    
+    completed_bar = mark * int(temp*20/total)
+    imcompleted_bar = ' ' * (20-int(temp*20/total))
+    percentage = float(temp/total*100)
+    
+    print('\r' + f'[Progress] : |{completed_bar:.<20}| {temp}/{total} [{percentage:.2f}%]', end='\r')
+    sleep(0.001*8)
+    
+print('\nCompleted !')
